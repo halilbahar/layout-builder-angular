@@ -4,12 +4,13 @@
   outline: solid black 1px;
   width: 0;
   overflow: hidden;
+  background-color: #070d11;
 
   .scale-wrapper {
     position: relative;
     left: 50%;
     top: 50%;
-    background-color: black;
+    background-color: white;
     display: inline-block;
   }
 }
