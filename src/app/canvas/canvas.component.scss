@@ -1,4 +1,15 @@
 :host {
   display: block;
   flex: 80%;
+  outline: solid black 1px;
+  width: 0;
+  overflow: hidden;
+
+  .scale-wrapper {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    background-color: black;
+    display: inline-block;
+  }
 }
