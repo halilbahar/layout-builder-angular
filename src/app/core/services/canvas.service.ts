@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { fabric } from 'fabric';
+import { Rectangle } from '../models/rectangle';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,6 +9,8 @@ import { fabric } from 'fabric';
 export class CanvasService {
 
   canvas: fabric.Canvas;
+  objects: BehaviorSubject<Rectangle[]> = new BehaviorSubject<Rectangle[]>([]);
+  private indexCounter = 1;
 
   constructor() { }
 
@@ -17,11 +21,13 @@ export class CanvasService {
   }
 
   createRegion(): void {
-    this.canvas.add(new fabric.Rect({
+    const rect = new fabric.Rect({
       width: 50,
       height: 50,
       top: 50,
       left: 50
-    }));
+    });
+    this.canvas.add(rect);
+    this.objects.next([...this.objects.getValue(), new Rectangle('Region-' + this.indexCounter++, 0, 10, rect)]);
   }
 }

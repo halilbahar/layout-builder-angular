@@ -8,7 +8,7 @@ import { CanvasService } from '../core/services/canvas.service';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor(private canvasService: CanvasService) { }
+  constructor(public canvasService: CanvasService) { }
 
   ngOnInit(): void {
   }

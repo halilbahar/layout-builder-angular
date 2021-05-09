@@ -1,3 +1,6 @@
 <div class="layer-list">
-  <button (click)="createRegion()">test</button>
+  <button (click)="createRegion()">New Region</button>
+  <div *ngFor="let obj of canvasService.objects | async" class="layer-element">
+    {{ obj.name }}
+  </div>
 </div>
