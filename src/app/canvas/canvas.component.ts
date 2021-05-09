@@ -1,5 +1,6 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { fabric } from 'fabric';
+import { CanvasService } from '../core/services/canvas.service';
 
 @Component({
   selector: 'app-canvas',
@@ -12,12 +13,10 @@ export class CanvasComponent implements OnInit {
   @ViewChild('screen', { static: true }) screen: ElementRef;
   canvas: fabric.Canvas;
 
-  constructor() { }
+  constructor(private canvasService: CanvasService) { }
 
   ngOnInit(): void {
-    this.canvas = new fabric.Canvas(this.screen.nativeElement);
-    this.canvas.setWidth(1920);
-    this.canvas.setHeight(1080);
+    this.canvasService.init(this.screen.nativeElement);
     this.resize();
   }
 

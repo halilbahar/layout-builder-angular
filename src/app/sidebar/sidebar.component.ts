@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CanvasService } from '../core/services/canvas.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private canvasService: CanvasService) { }
 
   ngOnInit(): void {
   }
 
+  createRegion(): void {
+    this.canvasService.createRegion();
+  }
 }
