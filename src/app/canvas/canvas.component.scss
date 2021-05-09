@@ -1,10 +1,12 @@
+@import "~src/variables";
+
 :host {
   display: block;
   flex: 80%;
   outline: solid black 1px;
   width: 0;
   overflow: hidden;
-  background-color: #070d11;
+  background-color: $canvas-background;
 
   .scale-wrapper {
     position: relative;
