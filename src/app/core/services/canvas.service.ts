@@ -103,7 +103,7 @@ export class CanvasService {
     const points = y ? [0, y, this.width, y] : [x, 0, x, this.height];
 
     this.canvas.add(new fabric.Line(points, {
-      stroke: '#000',
+      stroke: '#f0f',
       strokeDashArray: [8]
     }));
   }
